@@ -13,5 +13,5 @@ RUN yum upgrade -y -q
 RUN yum install -y -q hadoop-hdfs-namenode hadoop-hdfs-datanode 
 
 # Install Java and Zookeeper
-RUN yum install -y -q java-1.7.0-openjdk zookeeper-server
+RUN yum install -y -q java-1.7.0-openjdk java-1.7.0-openjdk-devel zookeeper-server
 
