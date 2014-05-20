@@ -18,7 +18,7 @@ ADD http://www.scala-lang.org/files/archive/scala-$SCALA_VERSION.tgz /
 RUN (cd / && gunzip < scala-$SCALA_VERSION.tgz)|(cd /opt && tar -xvf -)
 RUN rm /scala-$SCALA_VERSION.tgz
 
-# Install Spark
+# Download Spark
 WORKDIR /tmp
 RUN curl -O http://d3kbcqa49mib13.cloudfront.net/spark-$SPARK_VERSION-bin-$CDH_VERSION.tgz
 RUN tar -xvf spark-$SPARK_VERSION-bin-$CDH_VERSION.tgz
@@ -36,4 +36,14 @@ RUN cd /tmp/spark-$SPARK_VERSION-bin-$CDH_VERSION && tar czf spark-$SPARK_VERSIO
 RUN hadoop fs -mkdir /storage && hadoop fs -put /tmp/spark-$SPARK_VERSION-bin-$CDH_VERSION/spark-$SPARK_VERSION-$SPARK_HADOOP_VERSION.tgz /storage
 
 # Clean up the /tmp environment used to build Spark
-RUN rm -rf /tmp && rm -rf spark-$SPARK_VERSION-bin-$CDH_VERSION.tgz
+#RUN rm -rf /tmp && rm -rf spark-$SPARK_VERSION-bin-$CDH_VERSION.tgz
+
+# Install ssh server 
+RUN yum -y -q install openssh-server openssh-clients
+RUN chkconfig sshd on
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
+RUN echo -e "123\n123" | (passwd --stdin root)
+
+EXPOSE 5050
+CMD ["service","sshd","start"]

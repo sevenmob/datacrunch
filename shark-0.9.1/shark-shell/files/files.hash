@@ -1,0 +1,4 @@
+e3ac6583c62f42052cea7a020382bbedf0e77c95	build
+1b71db80b8db9d63a21ae796401e623c682141be	Dockerfile
+d1b865fb334ed0759ac3f65940fd4e62ed773fac	files/default_cmd
+843dd33f63d48530184be91e5f0f7d8f23da0360	files/test.shark

@@ -1,0 +1,7 @@
+9e3bd4f491400076b171f6b2c4acdeafc0fdb983	build
+f6853b33c5040027e9cf5c376b42a99c884ea52d	Dockerfile
+9732cab7d9e363fe1562ef82905f9116da70b510	files/authorized_keys
+6e5ef78cfb7b0ef955ee93f8b799410b26607fd1	files/configure_hadoop.sh
+9742f90b6b7d96f77cf324ad8ee16f4aa130e6ba	files/core-site.xml
+4c25cb03786faeb49d13209885787196ae766c9c	files/hdfs-site.xml
+22d5093d9127013a47336f2b96fd9bf35a792030	files/id_rsa

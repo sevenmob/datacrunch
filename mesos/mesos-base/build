@@ -1,0 +1,1 @@
+sudo docker build -t rogaha/mesos-base:0.18.2 .

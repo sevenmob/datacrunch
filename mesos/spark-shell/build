@@ -1,0 +1,1 @@
+sudo docker build -t rogaha/spark-shell-mesos:0.9.1 .

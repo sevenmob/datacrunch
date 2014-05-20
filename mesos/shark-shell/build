@@ -1,0 +1,1 @@
+sudo docker build -t rogaha/shark-shell-mesos:0.9.1 .
