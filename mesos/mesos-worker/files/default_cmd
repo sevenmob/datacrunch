@@ -19,4 +19,4 @@ sleep 5
 echo "starting Mesos Worker"
 cp /root/mesos_worker_files/run_mesos_worker.sh /
 chmod a+rx /run_mesos_worker.sh
-sudo -u hdfs HADOOP_HOME=$HADOOP_HOME LD_LIBRARY_PATH=$LD_LIBRARY_PATH /run_mesos_worker.sh $2 $IP
+sudo -u hdfs /run_mesos_worker.sh $2 $IP $1

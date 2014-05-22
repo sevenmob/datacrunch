@@ -11,6 +11,9 @@ echo "adding test data to HDFS"
 cp /root/spark_shell_files/test.txt /tmp
 sudo -u hdfs hadoop fs -put /tmp/test.txt hdfs://$1:9000/user/hdfs/test.txt
 
+# Copy the spark package into HDFS
+sudo -u hdfs hadoop fs -put /opt/spark-0.9.1/spark-0.9.1-1.2.1.tgz hdfs://$1:9000/tmp/spark-0.9.1-1.2.1.tgz
+
 echo "starting Spark Shell"
 cd $SPARK_HOME
 echo SPARK_HOME: `pwd`

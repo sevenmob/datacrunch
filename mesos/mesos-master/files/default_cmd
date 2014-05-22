@@ -22,4 +22,4 @@ sleep 5
 echo "starting Mesos Master"
 cp /root/mesos_master_files/run_mesos_master.sh /
 chmod a+rx /run_mesos_master.sh
-sudo -u hdfs LD_LIBRARY_PATH=$LD_LIBRARY_PATH /run_mesos_master.sh $IP
+sudo -u hdfs /run_mesos_master.sh $IP

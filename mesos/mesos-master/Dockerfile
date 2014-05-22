@@ -8,4 +8,10 @@ MAINTAINER Roberto G. Hashioka "roberto_hashioka@hotmail.com"
 
 ADD files /root/mesos_master_files
 
+# Add hdfs to the sudo group
+RUN adduser hdfs sudo
+RUN cp /etc/sudoers /tmp/sudoers
+RUN sed -i s/") ALL"/") NOPASSWD:ALL"/ /tmp/sudoers
+RUN EDITOR="cp /tmp/sudoers" visudo
+
 CMD ["/root/mesos_master_files/default_cmd"]

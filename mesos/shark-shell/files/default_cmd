@@ -7,5 +7,8 @@ env
 echo "preparing Mesos"
 prepare_mesos $1
 
+# Copy the spark package into HDFS
+sudo -u hdfs hadoop fs -put /opt/spark-0.9.1/spark-0.9.1-1.2.1.tgz hdfs://$1:9000/tmp/spark-0.9.1-1.2.1.tgz
+
 echo "starting Shark Shell"
 cd /opt/metastore && sudo -u hdfs /opt/shark-$SHARK_VERSION/bin/shark

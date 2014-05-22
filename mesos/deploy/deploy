@@ -21,7 +21,7 @@ echo "*** Starting Mesos $MESOS_VERSION ***"
 start_nameserver $NAMESERVER_IMAGE
 wait_for_nameserver
 start_mesos_master
-sleep 5
+sleep 40
 start_mesos_workers
 sleep 3
 print_cluster_info
